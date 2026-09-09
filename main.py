@@ -4,16 +4,22 @@ business_catalog = [
     {"name": "pedicure", "price": 300.00, "available": False},
 ]
 
+
 def main():
     while True:
         print("Menu:")
-        print("0. Salir")
+        print("0. Exit")
+        print("1. View catalog")
 
-        opcion = input("Elige una opción: ")
+        option = input("Choose an option: ")
 
-        if opcion == "0":
-            print("Hasta luego!")
+        if option == "0":
+            print("See you later!")
             break
+
+        if option == "1":
+            for product in business_catalog:
+                print(f"{product['name']}: ${product['price']}")
 
 
 if __name__ == "__main__":
