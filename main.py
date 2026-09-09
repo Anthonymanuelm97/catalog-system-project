@@ -22,6 +22,10 @@ def add_product(catalog, name, price, available):
     return new_product
 
 
+def available_products(catalog):
+    return [product for product in catalog if product["available"]]
+
+
 def main():
     while True:
         print("Menu:")
@@ -29,6 +33,7 @@ def main():
         print("1. View catalog")
         print("2. Search a product")
         print("3. Add a new product")
+        print("4. View available products")
 
         option = input("Choose an option: ")
 
@@ -56,6 +61,11 @@ def main():
 
             new_product = add_product(business_catalog, name, price, available)
             print(f"Product added: {new_product}")
+
+        if option == "4":
+            available_catalog = available_products(business_catalog)
+            for product in available_catalog:
+                print(f"{product['name']}: ${product['price']}")
 
 
 if __name__ == "__main__":
