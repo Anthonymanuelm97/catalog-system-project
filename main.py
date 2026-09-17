@@ -9,6 +9,10 @@ class Business:
     def __init__(self, catalog):
         self.catalog = catalog
 
+    def view_catalog(self):
+        for product in self.catalog:
+            print(f"{product['name']}: ${product['price']}")
+
 
 def search_product(catalog, name_searched):
     for product in catalog:
