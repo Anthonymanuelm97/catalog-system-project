@@ -5,6 +5,11 @@ business_catalog = [
 ]
 
 
+class Business:
+    def __init__(self, catalog):
+        self.catalog = catalog
+
+
 def search_product(catalog, name_searched):
     for product in catalog:
         if product["name"] == name_searched:
