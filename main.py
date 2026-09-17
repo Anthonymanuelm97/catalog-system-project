@@ -19,15 +19,20 @@ class Business:
                 return product
         return None
 
+    def add_product(self, name, price, available):
+        try:
+            price_number = float(price)
+        except ValueError:
+            print("The price must be a number. Product not added")
+            return None
 
-def add_product(catalog, name, price, available):
-    new_product = {
-        "name": name,
-        "price": price,
-        "available": available,
-    }
-    catalog.append(new_product)
-    return new_product
+        new_product = {
+            "name": name,
+            "price": price_number,
+            "available": available,
+        }
+        self.catalog.append(new_product)
+        return new_product
 
 
 def available_products(catalog):
