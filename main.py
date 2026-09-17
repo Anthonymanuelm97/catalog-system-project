@@ -13,12 +13,11 @@ class Business:
         for product in self.catalog:
             print(f"{product['name']}: ${product['price']}")
 
-
-def search_product(catalog, name_searched):
-    for product in catalog:
-        if product["name"] == name_searched:
-            return product
-    return None
+    def search_product(self, name_searched):
+        for product in self.catalog:
+            if product["name"].lower() == name_searched.lower():
+                return product
+        return None
 
 
 def add_product(catalog, name, price, available):
