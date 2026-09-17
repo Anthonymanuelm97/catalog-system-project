@@ -34,9 +34,17 @@ class Business:
         self.catalog.append(new_product)
         return new_product
 
+    def available_product(self):
+        return [product for product in self.catalog if product["available"]]
 
-def available_products(catalog):
-    return [product for product in catalog if product["available"]]
+
+def available_product(catalog, available=None):
+    if available is not None:
+        available_products = []
+        for product in catalog:
+            if product["available"] == available:
+                available_products.append(product)
+        return available_products
 
 
 def main():
